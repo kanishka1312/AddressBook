@@ -28,4 +28,42 @@ public class AddressBook {
         adBook.add(c1);
 
     }
+
+    public void editContact() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the first name of the contact to edit:");
+        String firstName = sc.next();
+
+        boolean found = false;
+        for (Contact contact : adBook) {
+            if (contact.firstName.equalsIgnoreCase(firstName)) {
+                found = true;
+                System.out.println("Editing contact: " + contact);
+
+                System.out.println("Enter new first name:");
+                contact.firstName = sc.next();
+                System.out.println("Enter new last name:");
+                contact.lastName = sc.next();
+                System.out.println("Enter new city:");
+                contact.city = sc.next();
+                System.out.println("Enter new state:");
+                contact.state = sc.next();
+                System.out.println("Enter new email:");
+                contact.email = sc.next();
+                System.out.println("Enter new phone:");
+                contact.phone = sc.nextInt();
+                System.out.println("Enter new zip:");
+                contact.zip = sc.nextInt();
+
+                System.out.println("Contact updated successfully!");
+                System.out.println("Updated Contact: " + contact);
+                break;
+            }
+        }
+
+        if (!found) {
+            System.out.println("Contact with the given first name not found.");
+        }
+    }
+
 }
