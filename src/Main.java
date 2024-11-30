@@ -9,12 +9,13 @@ public class Main {
         Scanner sc=new Scanner(System.in);
         System.out.println("Welcome to Address Book");
         do{
-            System.out.println("Enter 1 to create contact \n Enter 2 to display all contacts \n Enter 3 to edit details");
+            System.out.println("Enter 1 to create contact \n Enter 2 to display all contacts \n Enter 3 to edit details \n Enter 4 to delete a contact");
             int input=sc.nextInt();
             switch (input){
                 case 1-> a1.createContact();
                 case 2-> a1.display();
                 case 3-> a1.editContact();
+                case 4-> a1.deleteContact();
                 default -> System.out.println("wrong input");
             }
             System.out.println("Enter 0 to exit");
